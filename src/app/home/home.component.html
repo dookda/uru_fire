@@ -1,0 +1,83 @@
+<div class="container mt-6">
+  <div class="row">
+    <div class="col-lg-8 col-sm-12">
+      <h4>ตำแหน่งไฟป่าจังหวัดอุตรดิตถ์และพื้นที่ข้างเคียง</h4>
+      <div class="card">
+        <div class="card-body" id="map">
+        </div>
+      </div>
+      <p></p>
+      <p></p>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">จำนวน hotspot</h4>
+          <h6 class="card-subtitle mb-2 text-muted">สรุปข้อมูล hotspot รายจังหวัด</h6>
+          <div id="chart"></div>
+        </div>
+      </div>
+      <p></p>
+      <p></p>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <h4>ข้อมูล</h4>
+      <div class="card">
+        <div class="card-body" id="legend">
+          <h5 class="card-subtitle mb-2 text-muted">สัญลักษณ์</h5>
+          &nbsp;&nbsp;&nbsp;
+          <img src="http://cgi.uru.ac.th/gs-hotspot/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=25&HEIGHT=25&LAYER=hp:hotspot_ud_today">Hotspot
+
+          <br /> &nbsp;&nbsp;&nbsp;ระดับคุณภาพอากาศ
+          <br />&nbsp;&nbsp;&nbsp;
+          <img src="http://cgi.uru.ac.th/fire_assets/img/aqi1.png" style="width: 20px">&nbsp;ดีมาก
+          <br />&nbsp;&nbsp;&nbsp;
+          <img src="http://cgi.uru.ac.th/fire_assets/img/aqi2.png" style="width: 20px">&nbsp;ดี
+          <br />&nbsp;&nbsp;&nbsp;
+          <img src="http://cgi.uru.ac.th/fire_assets/img/aqi3.png" style="width: 20px">&nbsp;ปานกลาง
+          <br />&nbsp;&nbsp;&nbsp;
+          <img src="http://cgi.uru.ac.th/fire_assets/img/aqi4.png" style="width: 20px">&nbsp;เริ่มมีผลกระทบต่อสุขภาพ
+          <br />&nbsp;&nbsp;&nbsp;
+          <img src="http://cgi.uru.ac.th/fire_assets/img/aqi5.png" style="width: 20px">&nbsp;มีผลกระทบต่อสุขภาพ
+          <br />
+          <br /> &nbsp;&nbsp;&nbsp;
+          <img src="http://www3.cgistln.nu.ac.th/geoserver/wms?service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=gistdata:village">หมู่บ้าน
+
+          <br /> &nbsp;&nbsp;&nbsp;
+          <img src="http://www3.cgistln.nu.ac.th/geoserver/wms?service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=gistdata:tambon">ขอบเขตตำบล
+          <br /> &nbsp;&nbsp;&nbsp;
+          <img src="http://www3.cgistln.nu.ac.th/geoserver/wms?service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=gistdata:amphoe">ขอบเขตอำเภอ
+          <br /> &nbsp;&nbsp;&nbsp;
+          <img src="http://www3.cgistln.nu.ac.th/geoserver/wms?service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=gistdata:province">ขอบเขตจังหวัด
+          <br />
+          <p></p>
+          <hr>
+          <p></p>
+          <h5 class="card-subtitle mb-2 text-muted">เกี่ยวกับข้อมูล</h5>
+          ข้อมูล hotspot เป็นข้อมูลแบบ near real-time โดยอัพเดทข้อมูลทุก 3 ชั่วโมง ซึ่งถูกบันทึกด้วยระบบ MODIS
+          ของดาวเทียม Aqua (A) และ Terra (T) มีความละเอียดเชิงพื้นที่ 1 km และระบบ VIIRS ของดาวเทียม Suomi NPP (N)
+          มีความละเอียดเชิงพื้นที่ 375 m
+          <br />
+          เวลาที่โคจรผ่านภาคเหนือประเทศไทย Aqua 13.42 น. Terra 10.36 น. Suomi NPP 14.2 น.
+          <hr>
+          <h5 class="card-subtitle mb-2 text-muted">แหล่งที่มาของข้อมูล:</h5>
+          ข้อมูล hotspot: <a target="_blank" href="https://firms.modaps.eosdis.nasa.gov/">
+            The Fire Information for Resource Management System (FIRMS)</a>
+          <br /> ข้อมูลคุณภาพอากาศ: <a target="_blank" href="http://air4thai.pcd.go.th">
+            รายงานสถานการณ์และคุณภาพอากาศประเทศไทย กรมควบคุมมลพิษ</a>
+          <!-- <hr>
+          อัพเดทเมื่อ: {{time}} -->
+        </div>
+      </div>
+      <p></p>
+      <p></p>
+      <!-- <div class="card">
+        <div class="card-body" id="credit">
+
+
+
+        </div>
+      </div> -->
+
+
+    </div>
+  </div>
+</div>
