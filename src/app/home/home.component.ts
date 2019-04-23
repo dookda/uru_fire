@@ -140,8 +140,10 @@ export class HomeComponent implements OnInit {
       fillOpacity: 0.8
     };
 
+    const iconfire = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiBjbGFzcz0iIj48Zz48cGF0aCBzdHlsZT0iZmlsbDojRkY2NTM2OyIgZD0iTTU0LjIxMSwyNDkuN2MwLDAsMjAuMjI4LDI5LjcxNyw2Mi42MjQsNTQuODcxYzAsMC0zMC43MDUtMjU5LjUwMiwxNjkuMzU4LTMwNC41NzEgIGMtNTEuMjU3LDE4OC4xMjEsNjUuMiwyNDEuMTc0LDEwNy42NTEsMTQxLjc4NmM3MC44OTMsOTQuNjUxLDE3LjA2NiwxNzcuMjI5LDE3LjA2NiwxNzcuMjI5ICBjMjkuMDY5LDQuMTg4LDUzLjQ4Ny0yNy41Nyw1My40ODctMjcuNTdjMC4yMTgsMy45MTIsMC4zNCw3Ljg1MSwwLjM0LDExLjgxOEM0NjQuNzM4LDQxOC41NDUsMzcxLjI4Myw1MTIsMjU2LDUxMiAgUzQ3LjI2Miw0MTguNTQ1LDQ3LjI2MiwzMDMuMjYyQzQ3LjI2MiwyODQuNzQ0LDQ5LjY4NiwyNjYuNzk0LDU0LjIxMSwyNDkuN3oiIGRhdGEtb3JpZ2luYWw9IiNGRjY1MzYiIGNsYXNzPSIiPjwvcGF0aD48cGF0aCBzdHlsZT0iZmlsbDojRkY0MjFEOyIgZD0iTTQ2NC4zOTgsMjkxLjQ0NWMwLDAtMjQuNDE4LDMxLjc1OC01My40ODcsMjcuNTdjMCwwLDUzLjgyNy04Mi41NzgtMTcuMDY2LTE3Ny4yMjkgIEMzNTEuMzk0LDI0MS4xNzQsMjM0LjkzNywxODguMTIxLDI4Ni4xOTQsMEMyNzUuNDc5LDIuNDE0LDI2NS40MzEsNS40NDcsMjU2LDkuMDE4VjUxMmMxMTUuMjgzLDAsMjA4LjczOC05My40NTUsMjA4LjczOC0yMDguNzM4ICBDNDY0LjczOCwyOTkuMjk1LDQ2NC42MTYsMjk1LjM1Nyw0NjQuMzk4LDI5MS40NDV6IiBkYXRhLW9yaWdpbmFsPSIjRkY0MjFEIiBjbGFzcz0iIj48L3BhdGg+PHBhdGggc3R5bGU9ImZpbGw6I0ZCQkYwMDsiIGQ9Ik0xNjQuNDU2LDQyMC40NTZDMTY0LjQ1Niw0NzEuMDE0LDIwNS40NDIsNTEyLDI1Niw1MTJzOTEuNTQ0LTQwLjk4Niw5MS41NDQtOTEuNTQ0ICBjMC0yNy4wNjEtMTEuNzQxLTUxLjM3OS0zMC40MDgtNjguMTM4Yy0zNS4zOTQsNDguMDg1LTg1LjgzMi0yNC44NTYtNDYuNTI0LTc4LjEyMiAgQzI3MC42MTIsMjc0LjE5NiwxNjQuNDU2LDI4Ny40OTksMTY0LjQ1Niw0MjAuNDU2eiIgZGF0YS1vcmlnaW5hbD0iI0ZCQkYwMCIgY2xhc3M9IiI+PC9wYXRoPjxwYXRoIHN0eWxlPSJmaWxsOiNGRkE5MDAiIGQ9Ik0zNDcuNTQ0LDQyMC40NTZjMC0yNy4wNjEtMTEuNzQxLTUxLjM3OS0zMC40MDgtNjguMTM4Yy0zNS4zOTQsNDguMDg1LTg1LjgzMi0yNC44NTYtNDYuNTI0LTc4LjEyMiAgYzAsMC01Ljc2OCwwLjcyNS0xNC42MTIsMy41MTZWNTEyQzMwNi41NTgsNTEyLDM0Ny41NDQsNDcxLjAxNCwzNDcuNTQ0LDQyMC40NTZ6IiBkYXRhLW9yaWdpbmFsPSIjRkZBOTAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiPjwvcGF0aD48L2c+IDwvc3ZnPg==`;
+
     const hp = L.icon({
-      iconUrl: 'http://www.map.nu.ac.th/marker/fire.png',
+      iconUrl: iconfire,
       iconSize: [32, 37],
       iconAnchor: [12, 37],
       popupAnchor: [5, -30]
@@ -226,11 +228,18 @@ export class HomeComponent implements OnInit {
         },
         onEachFeature: (feature: any, layer: any) => {
           if (feature.properties) {
+            const time = feature.properties.acq_time;
+            const hr = Number(time.slice(0, 2));
+            const mn = Number(time.slice(2, 4));
+
+            // console.log(time);
+
             layer.bindPopup(
               'lat: ' + feature.properties.latitude +
               '<br/>lon: ' + feature.properties.longitude +
               '<br/>satellite: ' + feature.properties.satellite +
-              '<br/>acq_date: ' + feature.properties.acq_date
+              '<br/>วันที่: ' + feature.properties.acq_date +
+              '<br/>เวลา: ' + hr + ':' + mn
             );
           }
         }
@@ -254,11 +263,18 @@ export class HomeComponent implements OnInit {
         },
         onEachFeature: (feature: any, layer: any) => {
           if (feature.properties) {
+            const time = feature.properties.acq_time;
+            const hr = time.slice(0, 2);
+            const mn = time.slice(2, 4);
+
+            // console.log(time);
+
             layer.bindPopup(
               'lat: ' + feature.properties.latitude +
               '<br/>lon: ' + feature.properties.longitude +
               '<br/>satellite: ' + feature.properties.satellite +
-              '<br/>acq_date: ' + feature.properties.acq_date
+              '<br/>วันที่: ' + feature.properties.acq_date +
+              '<br/>เวลา: ' + hr + ':' + mn + ' น.'
             );
           }
         }
